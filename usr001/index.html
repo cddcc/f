@@ -8,7 +8,6 @@ cat usr001/post.json | jq '.[60:80]' > usr001/post4.json -->
 <head>
 <title>Page Title</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css">
 <style>
 * {box-sizing: border-box;}
 
@@ -137,7 +136,7 @@ body {
 <!-- Header -->
 <div class="header">
   <h3>Website </h3>
-  <p>With a <b>flexible</b> layout.</p>
+  <p>With <b>flexible</b> layout.</p>
 </div>
 
 <!-- Navigation Bar -->
@@ -184,8 +183,7 @@ let page = 1;
 async function getPosts() {
   const res = await fetch(`https://cddcc.github.io/f/usr001/post${page}.json`);
   const data = await res.json();
-  return data;
-}
+  return data;}
 
 // Show posts in DOM
 async function showPosts() {
@@ -213,10 +211,8 @@ baguetteBox.run('.post')
 // Show loader & fetch more posts
 function showLoading() {
   loading.classList.add('show');
-
   setTimeout(() => {
     loading.classList.remove('show');
-
     setTimeout(() => {
       page++;
       showPosts();
@@ -225,7 +221,7 @@ function showLoading() {
 }
 
 // Filter posts by input
-/* function filterPosts(e) {
+ function filterPosts(e) {
   const term = e.target.value.toUpperCase();
   const posts = document.querySelectorAll('.post');
 
@@ -239,7 +235,7 @@ function showLoading() {
       post.style.display = 'none';
     }
   });
-} */
+}
 
 // Show initial posts
 showPosts();
@@ -250,9 +246,8 @@ window.addEventListener('scroll', () => {
   }
 });
 
-/* filter.addEventListener('input', filterPosts); */
+filter.addEventListener('input', filterPosts);
 </script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" async></script>
 </body>
 </html>
