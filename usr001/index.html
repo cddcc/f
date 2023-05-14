@@ -12,7 +12,7 @@ body {
   background: #181818;
   color: white;
   margin: auto;
-  padding-bottom: 100px;
+  padding-bottom: 60px;
 }
 
 /* Header title */
@@ -179,8 +179,8 @@ const filter = document.getElementById('filter');
   const term = e.target.value.toUpperCase();
   const posts = document.querySelectorAll('.po');
   posts.forEach(po => {
-    const md = post.querySelector('.md').innerText.toUpperCase();
-    const body = post.querySelector('.poy').innerText.toUpperCase();
+    const md = po.querySelector('.md').innerText.toUpperCase();
+    const body = po.querySelector('.poy').innerText.toUpperCase();
     if (md.indexOf(term) > -1 || body.indexOf(term) > -1) {
       po.style.display = 'flex';
     } else {
