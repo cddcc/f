@@ -62,6 +62,7 @@ body {
   left: -20px;
   border-radius: 50%;
   float:left;
+  max-width:60px
 }
 
 .poy img{
@@ -127,7 +128,7 @@ placeholder="Filter posts..."/>
 <div id="main">
 
 <div class="po">
-<div class="mdmg"><img src="mdl/1.jpg" loading="lazy" style="max-width:60px"></div>
+<div class="mdmg"><img src="mdl/1.jpg" loading="lazy"></div>
 <p class="md">mdl001 &nbsp <span style="color:grey; float:right">2023.05.31.23.59 &nbsp &nbsp</span></p>
 <p class="poy">body1
 <a href="https://via.placeholder.com/900/00ffff.jpg"><img src="https://via.placeholder.com/900/00ffff.jpg" loading="lazy"></a>
@@ -139,9 +140,9 @@ placeholder="Filter posts..."/>
 </p></div><hr><br>
 
 <div class="po">
-<div class="mdmg"><img src="mdl/2.jpg" loading="lazy" style="max-width:60px"></div>
+<div class="mdmg"><img src="mdl/2.jpg" loading="lazy"></div>
 <p class="md">mdl001 &nbsp <span style="color:grey; float:right">2023.05.31.23.58 &nbsp &nbsp</span></p>
-<p class="poy">body1
+<p class="poy">body1<br>
 <a href="https://via.placeholder.com/800/fffff0.jpg"><img src="https://via.placeholder.com/800/fffff0.jpg" loading="lazy"></a>
 <a href="https://via.placeholder.com/700/ffff00.jpg"><img src="https://via.placeholder.com/700/ffff00.jpg" loading="lazy"></a>
 <video src="https://www.w3schools.com/html/mov_bbb.mp4" controls preload="metadata" style="max-width:100%"></video>
@@ -149,7 +150,7 @@ placeholder="Filter posts..."/>
 </p></div><hr><br>
 
 <div class="po">
-<div class="mdmg"><img src="mdl/2.jpg" loading="lazy" style="max-width:60px"></div>
+<div class="mdmg"><img src="mdl/2.jpg" loading="lazy"></div>
 <p class="md">mdl001 &nbsp <span style="color:grey; float:right">2023.05.31.23.57 &nbsp &nbsp</span></p>
 <p class="poy">body1
 <a href="https://via.placeholder.com/200/f0fff0.jpg"><img src="https://via.placeholder.com/800/fffff0.jpg" loading="lazy"</a>
@@ -177,11 +178,9 @@ const filter = document.getElementById('filter');
  function filterPosts(e) {
   const term = e.target.value.toUpperCase();
   const posts = document.querySelectorAll('.po');
-
   posts.forEach(po => {
     const md = post.querySelector('.md').innerText.toUpperCase();
-    const body = post.querySelector('.post-body').innerText.toUpperCase();
-
+    const body = post.querySelector('.poy').innerText.toUpperCase();
     if (md.indexOf(term) > -1 || body.indexOf(term) > -1) {
       po.style.display = 'flex';
     } else {
@@ -189,7 +188,6 @@ const filter = document.getElementById('filter');
     }
   });
 }
-
 
 filter.addEventListener('input', filterPosts);
 </script>
