@@ -15,20 +15,17 @@ body {
   padding-bottom: 60px;
 }
 
-/* Header title */
 .header {
   padding: 10px;
   text-align: center;
   background: #0080ff;
 }
 
-/* top navigation bar */
 .navbar {
   display: flex;
   justify-content: center;
 }
 
-/* Style navigation bar */
 .navbar a {
   color: white;
   padding: 10px 20px;
@@ -43,14 +40,12 @@ body {
   justify-content: center;
 }
 
-/* left column */
 .side {
   flex: 17%;
   padding: 10px;
   max-width: 300px;
 }
 
-/* Main column */
 #main {
   flex: 66%;
   padding:10px;
@@ -70,14 +65,12 @@ body {
   padding: 0.5%;
 }
 
-/* right column */
 .right {
   flex: 17%;
   padding: 10px;
   max-width: 300px;
 }
 
-/* Fake image */
 .fakeimg {
   background-color: #aaa;
   width: 100%;
@@ -94,13 +87,11 @@ body {
 </head>
 <body>
 
-<!-- Header -->
 <div class="header">
   <h3>Website </h3>
   <p>With <b>flexible</b> layout.</p>
 </div>
 
-<!-- Navigation Bar -->
 <div class="navbar">
   <a href="index.html">Home</a>
   <a href="#">News</a>
@@ -108,7 +99,6 @@ body {
   <a href="#">Link</a>
 </div>
 
-<!-- The flexible grid (content) -->
 <div class="row">
 <div class="side">
 
@@ -183,19 +173,18 @@ placeholder="Filter posts..."/>
 const filter = document.getElementById('filter');
 
 
-// Filter posts by input
- function filterPosts(e) {
-  const term = e.target.value.toUpperCase();
-  const posts = document.querySelectorAll('.po');
-  posts.forEach(po => {
-    const md = po.querySelector('.md').innerText.toUpperCase();
-    const body = po.querySelector('.poy').innerText.toUpperCase();
-    if (md.indexOf(term) > -1 || body.indexOf(term) > -1) {
-      po.style.display = 'flex';
-    } else {
-      po.style.display = 'none';
-    }
-  });
+function filterPosts(e) {
+const term = e.target.value.toUpperCase();
+const posts = document.querySelectorAll('.po');
+posts.forEach(po => {
+const md = po.querySelector('.md').innerText.toUpperCase();
+const body = po.querySelector('.poy').innerText.toUpperCase();
+if (md.indexOf(term) > -1 || body.indexOf(term) > -1) {
+po.style.display = 'flex';
+} else {
+po.style.display = 'none';
+}
+});
 }
 
 filter.addEventListener('input', filterPosts);
