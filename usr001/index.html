@@ -203,7 +203,7 @@ async function showPosts() {
     postEl.classList.add('post');
     postEl.innerHTML = `
       <div class="profile"><img src="${post.mdi}" loading="lazy" style="max-width:60px"></div>
-      <p class="post-md">${post.md} &nbsp <span style="color:grey; float:right">${post.date} &nbsp &nbsp</span></p>
+      <br><p class="post-md">${post.md} &nbsp <span style="color:grey; float:right">${post.date} &nbsp &nbsp</span></p>
       <p class="post-body">${post.body}</p>
       ${post.mg.map(mg => `<a href="${mg}"><img src="${mg}" loading="lazy" style="max-width:50%; padding: 0.5%;"></a>`
       ).join('')}
