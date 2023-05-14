@@ -204,7 +204,7 @@ async function showPosts() {
     postEl.classList.add('post');
     postEl.innerHTML = `
       <div class="profile"><img src="${post.mdl}" loading="lazy" style="max-width:60px"></div>
-      <!-- <b>${post.title}</b> --><br><br><span style="color:grey; float:right">${post.date} &nbsp &nbsp</span>
+      <br><p class="post-md">${post.md}<span style="color:grey; float:right">${post.date} &nbsp &nbsp</span></p>
       <p class="post-body">${post.body}</p>
       ${post.mg.map(mg => `<a href="${mg}"><img src="${mg}" loading="lazy" style="max-width:50%; padding: 0.5%;"></a>`
       ).join('')}
@@ -235,10 +235,10 @@ function showLoading() {
   const posts = document.querySelectorAll('.post');
 
   posts.forEach(post => {
-    const title = post.querySelector('.post-title').innerText.toUpperCase();
+    const md = post.querySelector('.post-md').innerText.toUpperCase();
     const body = post.querySelector('.post-body').innerText.toUpperCase();
 
-    if (title.indexOf(term) > -1 || body.indexOf(term) > -1) {
+    if (md.indexOf(term) > -1 || body.indexOf(term) > -1) {
       post.style.display = 'flex';
     } else {
       post.style.display = 'none';
