@@ -11,7 +11,6 @@ body {font-family: sans-serif;text-align: center;}
 #flex-container {
   display: flex;
   flex-wrap: wrap;
-  background-color: DodgerBlue;
   max-width: 600px;
   justify-content: center;
   margin: auto;
@@ -46,7 +45,7 @@ body {font-family: sans-serif;text-align: center;}
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  padding-top: 200px; /* Location of the box */
+  padding-top: 300px; /* Location of the box */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -110,10 +109,9 @@ body {font-family: sans-serif;text-align: center;}
   <div><img src="https://picsum.photos/600/800" loading="lazy" style="max-width:100%;max-height:73%"><br><a>mdl002mdl002</a><br><button class="modal-button" href="#myModal1">Subscribe</button></div>
   <div><img src="https://picsum.photos/144/144" loading="lazy" style="max-width:100%;max-height:73%"><br><a>mdl003mdl003</a><br><button class="modal-button" href="#myModal2">OpenModal</button></div>
   <div><img src="https://picsum.photos/600/600" loading="lazy" style="max-width:100%;max-height:73%"><br><a>mdl004mdl004</a><br><button class="modal-button" href="#myModal1">Subscribe</button></div>
-  <div><img src="https://raw.githubusercontent.com/ghost/repo/m/usr001/mdl001/1.jpg" loading="lazy" style="max-width:65%"><a>howto</a><br><button class="modal-button" href="#myModal1">Subscribe</button></div>
+  <div><img src="https://picsum.photos/700/700" loading="lazy" style="max-width:100%;max-height:73%"><br><a>mdl004mdl004</a><br><button class="modal-button" href="#myModal1">Subscribe</button></div>
   <div><a>Some text</a></div>
   <div><a>7</a></div>  
-  <div><a>xx</a></div>
 </div>
 
 <p>Try resizing the browser window.</p>
@@ -121,60 +119,17 @@ body {font-family: sans-serif;text-align: center;}
 
 <!-- The Modal -->
 <div id="myModal1" class="modal">
-  <div class="modal-content">
-      <span class="close">×</span>
-      <p>Some text in the Modal Body</p>
+<div class="modal-content">
+<span class="close">×</span>
+<p>Some text in the Modal Body</p>
 <form id="myForm">
-  <input type="hidden" name="add" value="3487348734873487348734873487">
-    <input type="text" name="usr" required placeholder="Enter username">
-  <p>
-    <input type="email" name="eml" required placeholder="Enter email">
-  <p>
-    <input type="submit" value="Register">
+<input type="hidden" name="add" value="3487348734873487348734873487">
+<input type="text" name="usr" required placeholder="Enter username">
+<p><input type="email" name="eml" required placeholder="Enter email"></p>
+<p><input type="submit" value="Register"></p>
 </form>
-  </div>
 </div>
-
-<div id="myModal2" class="modal">
-  <div class="modal-content">
-      <span class="close">×</span>
-      <p>Some text in the Modal Body</p>
-<form id="myForm">
-  <input type="hidden" name="add" value="3487348734873487348734873487">
-  <div>
-    <input type="text" name="usr" required placeholder="Enter username">
-  </div><p>
-  <div>
-    <input type="email" name="eml" required placeholder="Enter email">
-  </div>
-  <div>
-    <input type="submit" value="Register">
-  </div>
-</form>
-  </div>
 </div>
-
-
-<!-- 
-<h2>3nd Modal</h2>
-
-<button class="modal-button" href="#myModal3">Open Modal</button>
-
-<div id="myModal3" class="modal">
-
-  <div class="modal-content">
-    <div class="modal-header">
-      <span class="close">×</span>
-      <h3>Modal Header</h3>
-    </div>
-    <div class="modal-body">
-      <p>3Some text in the Modal Body</p>
-      <p>3Some other text...</p>
-    </div>
-  </div>
-
-</div> 
--->
 
 <script>
 
