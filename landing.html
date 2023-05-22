@@ -47,7 +47,7 @@ body {font-family: sans-serif;text-align: center;}
   border: 1px solid #ddd;
 }
 
-/* The Modal (background) */
+/* Modal background */
 #modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -111,19 +111,17 @@ body {font-family: sans-serif;text-align: center;}
 
 <div id="flex-container">
 <input type="text" id="myInput" onkeyup="msearch()" placeholder="Search for names..">
-<div class="mdl"><img src="https://picsum.photos/800/800" loading="lazy">mdl001<div class="price">5.5</div><button class="mbut">Subscribe</button></div>
-<div class="mdl"><img src="https://picsum.photos/600/800" loading="lazy">mdl002<div class="price">3.5</div><button class="mbut">Subscribe</button></div>
-<div class="mdl"><img src="https://picsum.photos/144/144" loading="lazy">mdl003<div class="price">2.8</div><button class="mbut">OpenModal</button></div>
-<div class="mdl"><img src="https://picsum.photos/600/600" loading="lazy">mdl004<div class="price">3.5</div><button class="mbut">Subscribe</button></div>
-<div class="mdl"><img src="https://picsum.photos/700/700" loading="lazy">mdl004<div class="price">4.5</div><button class="mbut">Subscribe</button></div>
-<div class="mdl">Some text</div>
-<div class="mdl">7</div>  
+<div><img src="https://picsum.photos/800/800" loading="lazy">mdl001<div class="price">5.5</div><button class="mbut">Subscribe</button></div>
+<div><img src="https://picsum.photos/600/800" loading="lazy">mdl002<div class="price">3.5</div><button class="mbut" onclick="addToCart(this.parentNode.textContent)">Subscribe</button></div>
+<div><img src="https://picsum.photos/144/144" loading="lazy">mdl003<div class="price">2.8</div><button class="mbut">OpenModal</button></div>
+<div><img src="https://picsum.photos/600/600" loading="lazy">mdl004<div class="price">3.5</div><button class="mbut">Subscribe</button></div>
+<div><img src="https://picsum.photos/700/700" loading="lazy">mdl004<div class="price">4.5</div><button class="mbut">Subscribe</button></div>
+<div>Some text</div>
+<div>7</div>  
 </div>
 
 <p>Try resizing the browser window.</p>
 
-
-<!-- The Modal -->
 <div id="modal">
 <div id="modal-content">
 <span id="close">&times;</span>
@@ -155,12 +153,12 @@ function msearch() {
 }
 
 var modal = document.getElementById("modal");
-var btn = document.getElementById("myBtn");
+//var btn = document.getElementById("myBtn");
 var close = document.getElementById("close");
 
-btn.onclick = function() {
-  modal.style.display = "block";
-}
+//btn.onclick = function() {
+//  modal.style.display = "block";
+//}
 
 close.onclick = function() {
   modal.style.display = "none";
@@ -175,6 +173,7 @@ window.onclick = function(event) {
 
 var succ = document.createTextNode('Thank you! You will receive an email with login after we verify the transaction');
 var fail = document.createTextNode('Oops! Something went wrong. Please try again later.');
+
 
 
 </script>
