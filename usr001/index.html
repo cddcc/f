@@ -79,7 +79,47 @@ body {
   background-color:#aaa;
 }
 
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack */
+.loader {
+  opacity: 0;
+  display: flex;
+  position: fixed;
+  bottom: 50px;
+  transition: opacity 0.3s ease-in;
+}
+
+.loader.show {
+  opacity: 1;
+}
+
+.circle {
+  background-color: #222;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 5px;
+  animation: bounce 0.5s ease-in infinite;
+}
+
+.circle:nth-of-type(2) {
+  animation-delay: 0.1s;
+}
+
+.circle:nth-of-type(3) {
+  animation-delay: 0.2s;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive layout screen is less than 600px wide the two columns stack */
 @media screen and (max-width: 600px) {
   .row, .navbar {   
   flex-direction: column;
@@ -111,40 +151,8 @@ body {
 <div class="fakeimg" style="height:60px;">image</div>
 </div>
 
-<div id="main">
+<div id="main"></div>
 
-<div class="po">
-<div class="mdmg"><img src="mdl/" loading="lazy"></div>
-<p class="md">mdl00 &nbsp <span style="color:grey; float:right">20 &nbsp &nbsp</span></p>
-<p class="poy"><br><br>
-<a href=""><img src="" loading="lazy"></a>
-<video src="" controls preload="metadata"></video>
-</p><hr><br></div>
-
-<div class="po">
-<div class="mdmg"><img src="mdl/1.jpg" loading="lazy"></div>
-<p class="md">mdl001 &nbsp <span style="color:grey; float:right">2023.05.31.23.59 &nbsp &nbsp</span></p>
-<p class="poy">body1<br><br>
-<a href="https://via.placeholder.com/900/0000ff.jpg"><img src="https://via.placeholder.com/900/0000ff.jpg" loading="lazy"></a>
-<a href="https://via.placeholder.com/800/fffff0.jpg"><img src="https://via.placeholder.com/800/fffff0.jpg" loading="lazy"></a>
-<a href="https://via.placeholder.com/600/00000f.jpg"><img src="https://via.placeholder.com/600/00000f.jpg" loading="lazy"></a>
-<a href="https://via.placeholder.com/600/00ffff.jpg"><img src="https://via.placeholder.com/600/00ffff.jpg" loading="lazy"></a>
-<video src="https://www.w3schools.com/html/mov_bbb.mp4" controls preload="metadata"></video>
-<video src="https://www.w3schools.com/html/movie.mp4" controls preload="metadata"></video>
-</p><hr><br></div>
-
-<div class="po">
-<div class="mdmg"><img src="mdl/2.jpg" loading="lazy"></div>
-<p class="md">mdl002 &nbsp <span style="color:grey; float:right">2023.05.31.23.58 &nbsp &nbsp</span></p>
-<p class="poy">body2<br><br>
-<a href="https://via.placeholder.com/1200/ff000f.jpg"><img src="https://via.placeholder.com/1200/ff000f.jpg" loading="lazy"></a>
-<a href="https://via.placeholder.com/700/ffff00.jpg"><img src="https://via.placeholder.com/700/ffff00.jpg" loading="lazy"></a>
-<video src="https://www.w3schools.com/html/movie.mp4" controls preload="metadata"></video>
-</p><hr><br></div>
-
-
-
-</div>
 <div class="rig">
 <h4>AAAA</h4>
 <p>aaaa</p>
@@ -152,9 +160,65 @@ body {
 <br>
 <div class="fakeimg" style="height:60px;">image</div>
 </div>
+<div class="loader">
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+</div>
 </div>
 
 <script>
+
+const postsContainer = document.getElementById('main');
+const loading = document.querySelector('.loader');
+
+let page = 1;
+
+async function getPosts() {
+  const res = await fetch(`https://cddcc.github.io/f/usr001/post${page}.json`);
+  const data = await res.json();
+  return data;}
+
+async function showPosts() {
+  const posts = await getPosts();
+
+  posts.forEach(post => {
+    const postEl = document.createElement('div');
+    postEl.classList.add('po');
+    postEl.innerHTML = `
+      <div class="profile"><img src="${po.mdi}" loading="lazy"></div>
+      <p class="post-md">${po.md} &nbsp <span style="color:grey; float:right">${po.date} &nbsp &nbsp</span></p>
+      <p class="poy">${po.body}</p>
+      ${po.mg.map(mg => `<a href="${mg}"><img src="${mg}" loading="lazy"></a>`
+      ).join('')}
+      ${po.vd.map(vd => `<video src="${vd}" controls preload="metadata"></video>`
+      ).join('')}
+      <hr>
+      <br>
+    `;
+    postsContainer.appendChild(postEl);
+  });
+}
+
+function showLoading() {
+  loading.classList.add('show');
+  setTimeout(() => {
+    loading.classList.remove('show');
+    setTimeout(() => {
+      page++;
+      showPosts();
+    }, 300);
+  }, 1000);
+}
+
+showPosts();
+
+window.addEventListener('scroll', () => {
+  const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+  if (scrollHeight - scrollTop === clientHeight) {
+    showLoading();
+  }
+});
 
 function filterPosts(e) {
 const term = e.target.value.toUpperCase();
@@ -164,16 +228,14 @@ const md = po.querySelector('.md').innerText.toUpperCase();
 const body = po.querySelector('.poy').innerText.toUpperCase();
 if (md.indexOf(term) > -1 || body.indexOf(term) > -1) {
 po.style.display = 'inline';
-} else {
-po.style.display = 'none';
-}
+} else {po.style.display = 'none';}
 });
 }
 
 filter.addEventListener('input', filterPosts);
+
 baguetteBox.run('.po')
 </script>
 
 </body>
 </html>
-<!-- for m in $ml; do for mg in $pm; do echo -n >; done; done; -->
