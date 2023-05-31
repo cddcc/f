@@ -197,6 +197,7 @@ async function showPosts() {
     `;
     postsContainer.appendChild(postEl);
   });
+baguetteBox.run('.po')
 }
 
 function showLoading() {
@@ -214,7 +215,7 @@ showPosts();
 
 window.addEventListener('scroll', () => {
   const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-  if (scrollTop + clientHeight >= scrollHeight - 50) {
+  if (scrollHeight - scrollTop === clientHeight) {
     showLoading();
   }
 });
@@ -233,7 +234,6 @@ po.style.display = 'inline';
 
 filter.addEventListener('input', filterPosts);
 
-baguetteBox.run('.po')
 </script>
 
 </body>
