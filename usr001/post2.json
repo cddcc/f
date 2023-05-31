@@ -12,8 +12,8 @@
     "md": "mdl002",
     "date": "2023.05.30.23.58",
     "body": "body6",
-    "mg": "",
-    "vd": ""
+    "mg": ["https://via.placeholder.com/200/f0fff0.jpg"],
+    "vd": ["https://www.w3schools.com/html/movie.mp4"]
   },
   {
     "mdi": "mdl003/3.jpg",
