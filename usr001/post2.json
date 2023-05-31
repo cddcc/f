@@ -2,7 +2,7 @@
   {
     "mdi": "mdl001/1.jpg",
     "md": "mdl001",
-    "date": "2023.05.30.23.59",
+    "date": "2023.06.30.22.59",
     "body": "body5",
     "mg": ["https://via.placeholder.com/900/00ffff.jpg"],
     "vd": ["https://www.w3schools.com/html/movie.mp4"]
@@ -10,7 +10,7 @@
   {
     "mdi": "mdl002/2.jpg",
     "md": "mdl002",
-    "date": "2023.05.30.23.58",
+    "date": "2023.06.30.22.58",
     "body": "body6",
     "mg": ["https://via.placeholder.com/200/f0fff0.jpg"],
     "vd": ["https://www.w3schools.com/html/movie.mp4"]
@@ -18,15 +18,17 @@
   {
     "mdi": "mdl003/3.jpg",
     "md": "mdl003",
-    "date": "2023.05.30.23.57",
+    "date": "2023.06.30.22.57",
     "body": "body7",
-    "mg": ["https://via.placeholder.com/200/f0fff0.jpg"],
+    "mg": ["https://via.placeholder.com/800/f0ff000.jpg"],
     "vd": ["https://www.w3schools.com/html/movie.mp4"]
   },
   {
     "mdi": "mdl002/1.jpg",
     "md": "mdl002",
-    "date": "2023.05.30.23.56",
-    "body": "body8"
+    "date": "2023.06.30.22.56",
+    "body": "body8",
+    "mg": [],
+    "vd": []
   }
 ]
