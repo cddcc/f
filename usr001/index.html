@@ -186,12 +186,12 @@ async function showPosts() {
     const postEl = document.createElement('div');
     postEl.classList.add('po');
     postEl.innerHTML = `
-      <div class="profile"><img src="${po.mdi}" loading="lazy"></div>
-      <p class="post-md">${po.md} &nbsp <span style="color:grey; float:right">${po.date} &nbsp &nbsp</span></p>
-      <p class="poy">${po.body}</p>
-      ${po.mg.map(mg => `<a href="${mg}"><img src="${mg}" loading="lazy"></a>`
+      <div class="mdmg"><img src="${post.mdi}" loading="lazy"></div>
+      <p class="md">${post.md} &nbsp <span style="color:grey; float:right">${post.date} &nbsp &nbsp</span></p>
+      <p class="poy">${post.body}</p>
+      ${post.mg.map(mg => `<a href="${mg}"><img src="${mg}" loading="lazy"></a>`
       ).join('')}
-      ${po.vd.map(vd => `<video src="${vd}" controls preload="metadata"></video>`
+      ${post.vd.map(vd => `<video src="${vd}" controls preload="metadata"></video>`
       ).join('')}
       <hr>
       <br>
