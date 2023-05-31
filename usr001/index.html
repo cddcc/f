@@ -188,13 +188,12 @@ async function showPosts() {
     postEl.innerHTML = `
       <div class="mdmg"><img src="${post.mdi}" loading="lazy"></div>
       <p class="md">${post.md} &nbsp <span style="color:grey; float:right">${post.date} &nbsp &nbsp</span></p>
-      <p class="poy">${post.body}</p>
+      <p class="poy">${post.body}<br><br>
       ${post.mg.map(mg => `<a href="${mg}"><img src="${mg}" loading="lazy"></a>`
       ).join('')}
       ${post.vd.map(vd => `<video src="${vd}" controls preload="metadata"></video>`
       ).join('')}
-      <hr>
-      <br>
+      </p><hr><br>
     `;
     postsContainer.appendChild(postEl);
   });
