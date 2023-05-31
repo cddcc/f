@@ -20,8 +20,8 @@
     "md": "mdl003",
     "date": "2023.05.30.23.57",
     "body": "body7",
-    "mg": "https://via.placeholder.com/200/f0fff0.jpg",
-    "vd": "https://www.w3schools.com/html/movie.mp4"
+    "mg": ["https://via.placeholder.com/200/f0fff0.jpg"],
+    "vd": ["https://www.w3schools.com/html/movie.mp4"]
   },
   {
     "mdi": "mdl002/1.jpg",
