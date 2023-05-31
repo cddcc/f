@@ -160,11 +160,8 @@ body {
 <br>
 <div class="fakeimg" style="height:60px;">image</div>
 </div>
-<div class="loader">
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-</div>
+
+<div class="loader"><div class="circle"></div><div class="circle"></div><div class="circle"></div></div>
 </div>
 
 <script>
@@ -215,7 +212,7 @@ showPosts();
 
 window.addEventListener('scroll', () => {
   const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-  if (scrollHeight - scrollTop === clientHeight) {
+  if (scrollTop + clientHeight >= scrollHeight - 50) {
     showLoading();
   }
 });
