@@ -16,12 +16,12 @@
     "vd": ["https://www.w3schools.com/html/movie.mp4","https://www.w3schools.com/html/mov_bbb.mp4"]
   },
   {
-    mdi: "3.jpg",
-    md: "mdl003",
-    date: "2023.06.30.21.53",
-    body: "body11",
-    mg: ["https://via.placeholder.com/200/f0fff0.jpg","https://via.placeholder.com/200/ff000f.jpg"],
-    vd: ["https://www.w3schools.com/html/movie.mp4"]
+    "mdi": "3.jpg",
+    "md": "mdl003",
+    "date": "2023.06.30.21.53",
+    "body": "body11",
+    "mg": ["https://via.placeholder.com/200/f0fff0.jpg","https://via.placeholder.com/200/ff000f.jpg"],
+    "vd": ["https://www.w3schools.com/html/movie.mp4"]
   },
   {
     "mdi": "4.jpg",
