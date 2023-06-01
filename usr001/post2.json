@@ -1,6 +1,6 @@
 [
   {
-    "mdi": "mdl001/1.jpg",
+    "mdi": "1.jpg",
     "md": "mdl001",
     "date": "2023.06.30.22.59",
     "body": "body5",
@@ -8,7 +8,7 @@
     "vd": ["https://www.w3schools.com/html/movie.mp4"]
   },
   {
-    "mdi": "mdl002/2.jpg",
+    "mdi": "2.jpg",
     "md": "mdl002",
     "date": "2023.06.30.22.58",
     "body": "body6",
@@ -16,7 +16,7 @@
     "vd": ["https://www.w3schools.com/html/movie.mp4"]
   },
   {
-    "mdi": "mdl003/3.jpg",
+    "mdi": "3.jpg",
     "md": "mdl003",
     "date": "2023.06.30.22.57",
     "body": "body7",
@@ -24,7 +24,7 @@
     "vd": ["https://www.w3schools.com/html/movie.mp4"]
   },
   {
-    "mdi": "mdl002/1.jpg",
+    "mdi": "1.jpg",
     "md": "mdl002",
     "date": "2023.06.30.22.56",
     "body": "body8",
