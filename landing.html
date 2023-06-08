@@ -8,7 +8,7 @@
 <style>
 body {font-family: sans-serif;text-align: center;}
 
-#flex-container {
+#flexcontainer {
   display: flex;
   flex-wrap: wrap;
   max-width: 600px;
@@ -16,7 +16,7 @@ body {font-family: sans-serif;text-align: center;}
   margin: auto;
 }
 
-#flex-container > div {
+#flexcontainer > div {
   background-color: #f1f1f1;
   width: 146px;
   height: 200px;
@@ -26,7 +26,7 @@ body {font-family: sans-serif;text-align: center;}
   max-height:70%
 }
 
-#flex-container > div > img {
+#flexcontainer > div > img {
   max-width:100%;
   max-height:64%
 }
@@ -109,14 +109,15 @@ body {font-family: sans-serif;text-align: center;}
 </div>
 <br><br>
 
-<div id="flex-container">
+<div id="flexcontainer">
 <input type="text" id="myInput" onkeyup="msearch()" placeholder="Search for names..">
 <div><img src="https://picsum.photos/800/800" loading="lazy">mdl001<div class="price">5.5</div><button class="mbut">Subscribe</button></div>
-<div><img src="https://picsum.photos/600/800" loading="lazy">mdl002<div class="price">3.5</div><button class="mbut" onclick="addToCart(this.parentNode.textContent)">Subscribe</button></div>
+<div><img src="https://picsum.photos/600/800" loading="lazy"><div class="mdl">mdl002 </div><div class="price">3.5</div><button class="mbut" onclick="addToCart(parentNode.getElementsByClassName('mdl')[0].innerHTML)">Subscribe</button></div>
+<div><img src="https://picsum.photos/700/800" loading="lazy"><div class="mdl">mdl0005 </div><div class="price">3.7</div><button class="mbut" onclick="addToCart(parentNode)">Subscribe</button></div>
 <div><img src="https://picsum.photos/144/144" loading="lazy">mdl003<div class="price">2.8</div><button class="mbut">OpenModal</button></div>
 <div><img src="https://picsum.photos/600/600" loading="lazy">mdl004<div class="price">3.5</div><button class="mbut">Subscribe</button></div>
 <div><img src="https://picsum.photos/700/700" loading="lazy">mdl004<div class="price">4.5</div><button class="mbut">Subscribe</button></div>
-<div>Some text</div>
+<div id="demo">Some text</div>
 <div>7</div>  
 </div>
 
@@ -141,7 +142,7 @@ function msearch() {
     var input, filter, div, i, txtValue;
     input = document.getElementById("myInput");
     filter = input.value.toUpperCase();
-    div = document.getElementById("flex-container").getElementsByTagName("div");
+    div = document.getElementById("flexcontainer").getElementsByTagName("div");
     for (i = 0; i < div.length; i++) {
         txtValue = div[i].textContent;
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -170,9 +171,40 @@ window.onclick = function(event) {
   }
 }
 
-
 var succ = document.createTextNode('Thank you! You will receive an email with login after we verify the transaction');
 var fail = document.createTextNode('Oops! Something went wrong. Please try again later.');
+
+
+
+let cart = JSON.parse(localStorage.getItem("CART")) || [];
+updateCart();
+
+
+//function addToCart(id) {
+//console.log(id.querySelector(".price").textContent);
+//  }
+
+function addToCart(id) {
+  if (cart.some((item) => item === id)) {
+    changeNumberOfUnits("plus", id);
+  } else {
+    const item = id.querySelector(".price").textContent;
+
+    cart.push({
+      ...item,
+      numberOfUnits: 1,
+    });
+  }
+
+  updateCart();
+}
+
+// update cart
+function updateCart() {
+
+  localStorage.setItem("CART", JSON.stringify(cart));
+}
+
 
 
 
