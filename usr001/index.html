@@ -165,14 +165,14 @@ body {
 </div>
 
 <script>
-
+"use strict"
 const postsContainer = document.getElementById('main');
 const loading = document.querySelector('.loader');
 
 let page = 1;
 
 async function getPosts() {
-  const res = await fetch(`https://cddcc.github.io/f/usr001/post${page}.json`);
+  const res = await fetch(`post${page}.json`);
   const data = await res.json();
   return data;}
 
